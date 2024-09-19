@@ -1,4 +1,4 @@
-resource "aws_instance" "terraform" {
+resource "aws_instance" "expense" {
     count = length(var.instance_name)
     ami = data.aws_ami.ami_info.id
     instance_type = var.instance_name[count.index] == "mysql" ? "t3.small" : "t3.micro"
